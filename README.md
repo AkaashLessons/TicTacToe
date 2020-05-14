@@ -41,7 +41,7 @@ In code we’ll represent that as a list of 3 lists. For example, it could look 
 
 ## STEP 3: Now O has to choose a spot
 * This will basically look identical to 2-3 in step 2 except we replace ‘X’ with ‘O’
-* If you want to be really ~efficient~ **create a helper function called move that takes in the game board and the player letter and executes step 2-3, putting the player letter where necessary**
+* If you want to be really ~ efficient ~ **create a helper function called move that takes in the game board and the player letter and executes step 2-3, putting the player letter where necessary**
 
 ## STEP 4: What is our “while” condition?
 * Just like with hangman we’ll run a core loop while the game hasn’t ended yet
