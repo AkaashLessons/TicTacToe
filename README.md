@@ -25,9 +25,9 @@ In code we’ll represent that as a list of 3 lists. For example, it could look 
 
 ## STEP 2: Let X choose a spot
 * The users probably won’t know how we index starting at 0 in python so let them put in coordinates from 1-3 instead of 0-2 (**This just means that when we go to store their move in our nested list, we’ll subtract one from each coordinate**)
-* Let’s go back and right after they choose to play and show them what each coordinate corresponds to. Basically just print the following: *“Here are the coordinates to enter for each position on our game board as a reference:
-            [(1,1)   (1,2)   (1,3)]
-	[(2,1)   (2,2)   (2,3)]
+* Let’s go back and right after they choose to play and show them what each coordinate corresponds to. Basically just print the following: *“Here are the coordinates to enter for each position on our game board as a reference: \n
+            [(1,1)   (1,2)   (1,3)] \n
+	[(2,1)   (2,2)   (2,3)] \n
 	[(3,1)   (3,2)   (3,3)]”*
 * First, we will **print out our game board** so the user knows what positions are taken. ***We need to loop through the outer list printing each each row in the board***
 * Now, **prompt the user to put in the coordinates of where they want to move**
