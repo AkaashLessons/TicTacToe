@@ -10,8 +10,9 @@ def tic_tac_toe():
         print("[(2,1)   (2,2)   (2,3)] \n")
         print("[(3,1)   (3,2)   (3,3)] \n")
         print(" ~~~~~~~~~~STARTING GAME~~~~~~~~~~")
-        move_player('X')
-        move_player('O')
+        while gameover == False:
+            move_player('X')
+            move_player('O')
 
 def move_player(player):
     print("this is the current gameboard")
@@ -25,3 +26,14 @@ def move_player(player):
     else:
         print("this space is taken please try another space")
         move_player(player)
+def three_in_a_row (player):
+    if player == [(1,1),(1,2),(1,3)] or [(2,1),(2,2),(2,3)] or [(3,1),(3,2),(3,3)]:
+        print ("%player wins")%player
+        gameover = True
+    elif player == [(1,1),(2,1),(3,1)] or [(1,2),(2,2),(3,2)] or [(1,3),(2,3),(3,3)]
+        print ("%player wins")%player
+        gameover = True
+    elif player == [(1,1),(2,2),(3,3)]:
+         print ("%player wins")%player
+        gameover = True
+        
