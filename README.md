@@ -89,13 +89,13 @@ Diagonally:
 * ***So check that our gameboard has no ‘-’ in it***
 * For each list in the outer list, **filter out the values that == ‘-’ and if the length of our remaining list isn’t 3 (that means there are hyphens in the list), we don’t have a tie, and we should return gameover(which starts at False)**
 
-## STEP 8: Check if game over**
+## STEP 7: Check if game over**
 * Create a function called *check_game_over* 
 * We will first call three_in_a_row on 'X' to see if gameover is set to true, if it isn't, we will call three_in_a_row on 'O' to see if this changes gameover. If neither of these change gameover to true, then we might have a tie so we call tie_game
 * We add check_game_over() to the end of our while loop, and it should update our "gameover" condition if needbe
 
 
-## STEP 7: If you haven’t already, wrap it up in a function!
+## STEP 8: If you haven’t already, wrap it up in a function!
 * Just like with Hangman! 
 * Remember to call tic_tac_toe() at the end of the while loop
 * Play with someone :)
