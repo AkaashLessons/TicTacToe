@@ -1,4 +1,5 @@
 gameboard = [['-','-','-'],['-','-','-'],['-','-','-']]
+gameover = False
 
 def tic_tac_toe():
     print("welcome to tic tac toe")
@@ -13,6 +14,7 @@ def tic_tac_toe():
         while gameover == False:
             move_player('X')
             move_player('O')
+            check_game_over()
 
 def move_player(player):
     print("this is the current gameboard")
@@ -26,14 +28,40 @@ def move_player(player):
     else:
         print("this space is taken please try another space")
         move_player(player)
-def three_in_a_row (player):
-    if player == [(1,1),(1,2),(1,3)] or [(2,1),(2,2),(2,3)] or [(3,1),(3,2),(3,3)]:
-        print ("%player wins")%player
-        gameover = True
-    elif player == [(1,1),(2,1),(3,1)] or [(1,2),(2,2),(3,2)] or [(1,3),(2,3),(3,3)]
-        print ("%player wins")%player
-        gameover = True
-    elif player == [(1,1),(2,2),(3,3)]:
-         print ("%player wins")%player
-        gameover = True
         
+def three_in_a_row (player):
+    for row in gameboard:
+        if all([spot == player for spot in row]):
+            gameover = True
+            print("%s wins!!!" %player)
+            return(gameover)
+    for column in range(len(gameboard)):
+        won = True
+        for row in range(len(gameboard)):
+            if gameboard[row][column] != player:
+                won = False
+                break
+        if won is True:
+            gameover = True
+            print("%s wins!!!" %player)
+            return(gameover)
+    if gameboard[0][0] == player and gameboard[1][1] == player and gameboard[2][2] == player:
+            gameover = True
+            print("%s wins!!!" %player)
+            return(gameover)
+    if gameboard[0][2] == player and gameboard[1][1] == player and gameboard[2][0] == player:
+            gameover = True
+            print("%s wins!!!" %player)
+            return(gameover)
+
+def check_game_over():
+    gameover = three_in_a_row("X")
+    if gameover is False:
+        gameover = three_in_a_row("O")
+        if gameover is False:
+            gameover = tie_game()
+
+def tie_game():
+    ##checks if there are any hyphens in the board
+    
+     
