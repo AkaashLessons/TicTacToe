@@ -84,19 +84,19 @@ Diagonally:
 * At the end of the function, **return gameover**
 
 ## STEP 6: Check for a tie
-* **Create a function called draw that should take gameover and the gameboard**
+* **Create a function called tie_game that should take gameover and the gameboard**
 * A draw means that neither player has 3 in a row, but there aren’t any empty squares (or ‘-’ in our case)
 * ***So check that our gameboard has no ‘-’ in it***
 * For each list in the outer list, **filter out the values that == ‘-’ and if the length of our remaining list isn’t 3 (that means there are hyphens in the list), we don’t have a tie, and we should return gameover(which starts at False)**
-* ***If we make it through that for loop then we know every square is taken, so now set gameover = three_in_a_row(gameboard, ‘X’, gameover).*** This checks if X won.
-* ***If gameover is still false, we do gameover= three_in_a_row(gameboard, ‘O’, gameover)*** which will check if O won.
-* ***If gameover is still false, print(“It’s a tie!”) and return gameover***
-* Back in our *while gameover is False* clause, after we do *move(x,...)* call 
-*gameover = draw(gameover,gameboard)* and then do *move(o,..)* and call 
-*gameover = draw(gameover,gameboard)* again
+
+**STEP 7: Check if game over**
+* Create a function called *check_game_over* 
+* We will first call three_in_a_row on 'X' to see if gameover is set to true, if it isn't, we will call three_in_a_row on 'O' to see if this changes gameover. If neither of these change gameover to true, then we might have a tie so we call tie_game
+* We add check_game_over() to the end of our while loop, and it should update our "gameover" condition if needbe
 
 
 ## STEP 7: If you haven’t already, wrap it up in a function!
 * Just like with Hangman! 
+* Remember to call tic_tac_toe() at the end of the while loop
 * Play with someone :)
 
